@@ -1,4 +1,5 @@
-const Joi = require('joi');
+const Joi = require('joi'); //Joi = data validation library hoti hai.
+// Form / API me aane wale data ko check karta hai sahi hai ya galat.
 
 module.exports.listingSchema = Joi.object({
     listing : Joi.object({
