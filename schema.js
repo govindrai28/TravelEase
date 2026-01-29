@@ -1,5 +1,8 @@
 const Joi = require('joi'); //Joi = data validation library hoti hai.
 // Form / API me aane wale data ko check karta hai sahi hai ya galat.
+// schema.js (Joi): This validates data BEFORE it reaches the controller or database. (e.g., "This string must be an email," or "This number must be positive").
+// In simple terms:
+// schema.js is there to ensure that no matter how the data is sent (Form, Postman, Hack), it follows your strict rules before your server accepts it.
 
 module.exports.listingSchema = Joi.object({
     listing : Joi.object({
