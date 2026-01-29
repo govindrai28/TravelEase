@@ -3,14 +3,14 @@ const Joi = require('joi'); //Joi = data validation library hoti hai.
 
 module.exports.listingSchema = Joi.object({
     listing : Joi.object({
-        title: Joi.string().required(),
-        description: Joi.string().required(),
-        location: Joi.string().required(),
-        country: Joi.string().required(),
-        price: Joi.number().required().min(0),
+        title: Joi.string().required(),      // Must be text, cannot be empty
+        description: Joi.string().required(),// Must be text, cannot be empty
+        location: Joi.string().required(),   // Must be text
+        country: Joi.string().required(),    // Must be text
+        price: Joi.number().required().min(0), // Must be a number, CANNOT be negative (min 0)
         image: Joi.object({
-            url: Joi.string().uri().allow("", null),//Ensuure it's valid URL
-        }).optional(), //Make image optional
+            url: Joi.string().uri().allow("", null), // Must be a valid URL link, but empty is allowed
+        }).optional(),
     }).required(),
 });
 
